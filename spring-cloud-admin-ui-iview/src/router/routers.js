@@ -39,7 +39,26 @@ export default [
                 component: () => import('@/views/home/Home.vue')
             }
         ]
-    }, {
+    },{
+        path: '/application',
+        name: 'application',
+        component: Main,
+        meta: {
+            icon: 'logo-buffer',
+            title: '应用列表'
+        },
+        children: [
+            {
+                path: 'list',
+                name: 'application_list',
+                meta: {
+                    icon: 'md-notifications',
+                    title: '应用列表'
+                },
+                component: () => import('@/views/application/Application_list.vue')
+            }
+        ]
+    },{
         path: '/serve',
         name: 'serve',
         component: Main,
