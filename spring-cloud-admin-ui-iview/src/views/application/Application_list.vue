@@ -25,7 +25,9 @@
                     <div class="header_info">
                         <p class="title">{{app.name}}</p>
                         <p class="other"><span>{{app.instances.length}}</span> instances</p>
-                        <p class="other">2小时</p>
+                        <p class="other">
+                            <sba-time-ago :date="app.statusTimestamp"/>
+                        </p>
                     </div>
                 </header>
                 <div class="application_body">
@@ -55,10 +57,11 @@
 <script>
     import { getApplications } from '@/api/application'
     import iPage from '@/components/page'
+    import SbaTimeAgo from "../../components/sba/sba-time-ago";
 
     export default {
         name: "application_list",
-        components: {iPage},
+        components: {SbaTimeAgo, iPage},
         data(){
             return {
                 applications:[],

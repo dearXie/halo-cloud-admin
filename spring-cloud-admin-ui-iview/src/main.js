@@ -4,6 +4,7 @@ import iView from 'iview'
 import App from './App.vue'
 import router from './router'
 import store from './store'
+import sba from '@/components/sba'
 
 import i18n from '@/locale'
 import config from '@/config'
@@ -14,6 +15,8 @@ import './style/index.less'
 Vue.config.productionTip = false
 
 Vue.prototype.$config = config
+
+Vue.use(sba)
 
 Vue.use(iView, {
     i18n: (key, value) => {
