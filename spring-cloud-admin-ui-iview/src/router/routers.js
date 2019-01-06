@@ -56,34 +56,36 @@ export default [
                     title: '应用列表'
                 },
                 component: () => import('@/views/application/Application_list.vue')
+            },
+            {
+                path: ':name',
+                name: 'application_info',
+                meta: {
+                    icon: 'md-notifications',
+                    title: '应用详情',
+                    hideInMenu: true
+                },
+                component: () => import('@/views/application/Application_info.vue')
             }
         ]
     },{
-        path: '/serve',
-        name: 'serve',
+        path: '/instance',
+        name: 'instance',
         component: Main,
         meta: {
             icon: 'logo-buffer',
-            title: '服务管理'
+            title: '实例管理',
+            //hideInMenu: true
         },
         children: [
             {
                 path: 'list',
-                name: 'serve_list',
+                name: 'instance_list',
                 meta: {
                     icon: 'md-notifications',
                     title: '服务列表'
                 },
-                component: () => import('@/views/server/Server_list.vue')
-            },
-            {
-                path: 'list1',
-                name: 'serve_list1',
-                meta: {
-                    icon: 'md-notifications',
-                    title: '测试一下'
-                },
-                component: () => import('@/views/test2/Test.vue')
+                component: () => import('@/views/instance/Instance_list.vue')
             }
         ]
     }

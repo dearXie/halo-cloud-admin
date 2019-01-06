@@ -17,7 +17,7 @@
             </div>
         </header>
         <div class="application_list_warp">
-            <div class="application_item" v-for="app in this.applications">
+            <div class="application_item" v-for="app in this.applications" @click.stop="goApplicationInfo(app)">
                 <header class="application_header">
                     <div class="image">
                         <img src="http://spring.io/img/homepage/icon-spring-framework.svg">
@@ -67,6 +67,11 @@
                 applications:[],
                 search:"",
                 type: "2"
+            }
+        },
+        methods:{
+            goApplicationInfo(application) {
+                this.$router.push({name: 'application_info', params: {name: application.name}});
             }
         },
         mounted(){
