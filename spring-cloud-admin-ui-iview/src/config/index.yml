@@ -1,0 +1,8 @@
+production:
+  basePath: ''
+
+development:
+  basePath: "/api"
+  title: 服务治理平台
+  homeName: home
+  useI18n: true

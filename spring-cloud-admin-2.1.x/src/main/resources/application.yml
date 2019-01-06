@@ -1,0 +1,35 @@
+spring:
+  profiles:
+    active: dev
+  application:
+    name: spring-cloud-admin-2.1.x
+
+server:
+  port: 8082
+
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://eureka.springcloud.cn/eureka/
+
+
+info.groupId: @project.groupId@
+info.artifactId: @project.artifactId@
+info.version: @project.version@
+
+
+logging.file: /xujin/halo-cloud-sample/sample-boot-application.log
+
+
+#开启端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  security:
+    enabled: false
+  endpoint:
+      health:
+        show-details: ALWAYS
