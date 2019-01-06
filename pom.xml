@@ -45,6 +45,8 @@
 	   <module>spring-cloud-admin-cloud</module>
 	   <module>spring-cloud-admin-2.1.x</module>
 	   <module>spring-cloud-admin-1.5.x</module>
+       <module>spring-cloud-admin-extension</module>
+       <module>spring-cloud-admin-business</module>
    </modules>
 
 	<dependencyManagement>
@@ -61,6 +63,18 @@
 			<dependency>
 				<groupId>cn.springcloud.admin</groupId>
 				<artifactId>spring-cloud-admin-core</artifactId>
+				<version>0.0.1-SNAPSHOT</version>
+			</dependency>
+
+			<dependency>
+				<groupId>cn.springcloud.admin</groupId>
+				<artifactId>spring-cloud-admin-extension</artifactId>
+				<version>0.0.1-SNAPSHOT</version>
+			</dependency>
+
+			<dependency>
+				<groupId>cn.springcloud.admin</groupId>
+				<artifactId>spring-cloud-admin-business</artifactId>
 				<version>0.0.1-SNAPSHOT</version>
 			</dependency>
 

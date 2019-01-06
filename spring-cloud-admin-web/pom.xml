@@ -33,6 +33,16 @@
 		</dependency>
 
 		<dependency>
+			<groupId>cn.springcloud.admin</groupId>
+			<artifactId>spring-cloud-admin-extension</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>cn.springcloud.admin</groupId>
+			<artifactId>spring-cloud-admin-business</artifactId>
+		</dependency>
+
+		<dependency>
 			<groupId>de.codecentric</groupId>
 			<artifactId>spring-boot-admin-server-ui</artifactId>
 			<version>2.1.1</version>
