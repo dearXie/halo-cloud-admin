@@ -53,7 +53,7 @@
 </template>
 
 <script>
-    import { getApplications } from '@/api/server'
+    import { getApplications } from '@/api/application'
     import iPage from '@/components/page'
 
     export default {
