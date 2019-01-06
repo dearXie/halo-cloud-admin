@@ -47,6 +47,7 @@
 	   <module>spring-cloud-admin-1.5.x</module>
        <module>spring-cloud-admin-extension</module>
        <module>spring-cloud-admin-business</module>
+       <module>spring-cloud-admin-common</module>
    </modules>
 
 	<dependencyManagement>
@@ -58,6 +59,20 @@
 				<version>${spring-cloud.version}</version>
 				<type>pom</type>
 				<scope>import</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>org.projectlombok</groupId>
+				<artifactId>lombok</artifactId>
+				<version>1.18.2</version>
+				<scope>provided</scope>
+			</dependency>
+
+
+			<dependency>
+				<groupId>cn.springcloud.admin</groupId>
+				<artifactId>spring-cloud-admin-common</artifactId>
+				<version>0.0.1-SNAPSHOT</version>
 			</dependency>
 
 			<dependency>
