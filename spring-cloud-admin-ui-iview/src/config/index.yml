@@ -3,8 +3,8 @@ production:
 
 development:
   basePath: "/api"
-  title: 服务治理平台
+  title: Spring Cloud Admin
   homeName: home
   useI18n: true
   application:
-    name: 服务治理平台
+    name: Spring Cloud Admin
