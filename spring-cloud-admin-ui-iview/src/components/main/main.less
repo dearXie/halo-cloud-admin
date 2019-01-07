@@ -1,12 +1,36 @@
 .main{
   .logo-con{
-    height: 64px;
-    padding: 10px;
-    img{
-      height: 44px;
-      width: auto;
+    padding: 12px;
+    position: relative;
+    .logo{
+      position: relative;
       display: block;
-      margin: 0 auto;
+      transition: all .5s;
+      display: block;
+      height: 40px;
+      background: transparent url(../../assets/fogcloud-ico.svg) no-repeat;
+      background-size:100% 100%;
+      background-position-x: -80px;
+      span{
+        color: #4CAF50;
+        transition: all 2s;
+        line-height: 40px;
+        font-size: 22px;
+        position: absolute;
+        left: 70px;
+      }
+    }
+  }
+  .ivu-layout-sider-collapsed{
+    .logo-con{
+      .logo{
+        transform: scale(1.05, 1.05);
+        background-position-x: 0;
+        span{
+          transform: scale(1.05, 1.05);
+          width: 200px;
+        }
+      }
     }
   }
   .header-con{

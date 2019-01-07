@@ -6,3 +6,5 @@ development:
   title: 服务治理平台
   homeName: home
   useI18n: true
+  application:
+    name: 服务治理平台
