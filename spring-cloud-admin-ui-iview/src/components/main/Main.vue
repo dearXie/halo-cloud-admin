@@ -65,8 +65,6 @@
         data () {
             return {
                 collapsed: false,
-                minLogo,
-                maxLogo,
                 isFullscreen: false
             }
         },
