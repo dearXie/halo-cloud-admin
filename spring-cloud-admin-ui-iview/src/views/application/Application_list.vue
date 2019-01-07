@@ -49,13 +49,13 @@
             </div>
         </div>
         <div class="application_footer">
-            <iPage :total="12" :pageSize="8"/>
+            <iPage :total="total" :pageSize="req.pageSize" curretPage.sync="req.curretPage" @on-change="pageChange"/>
         </div>
     </div>
 </template>
 
 <script>
-    import { getApplications } from '@/api/application'
+    import { getApplicationPage } from '@/api/application'
     import iPage from '@/components/page'
     import SbaTimeAgo from "../../components/sba/sba-time-ago";
 
@@ -65,24 +65,40 @@
         data(){
             return {
                 applications:[],
+                total:0,
                 search:"",
-                type: "2"
+                type: "2",
+                req:{
+                    curretPage:1,
+                    pageSize:8
+                }
             }
         },
         methods:{
             goApplicationInfo(application) {
                 this.$router.push({name: 'application_info', params: {name: application.name}});
+            },
+            getPage(){
+                getApplicationPage(this.req.curretPage,this.req.pageSize).then((res)=>{
+                    if(res.status === 200 && res.data){
+                        if(res.data.code === 200){
+                            const pageData = res.data.data;
+                            this.applications = pageData.data;
+                            this.total = pageData.total
+                        }
+                    }
+                },error => {
+                    /* eslint-disable */
+                    console.log(error);
+                })
+            },
+            pageChange(val){
+                this.req.curretPage=val;
+                this.getPage();
             }
         },
         mounted(){
-            getApplications().then((res)=>{
-                if(res.status === 200){
-                    this.applications = res.data;
-                }
-            },error => {
-                /* eslint-disable */
-                console.log(error);
-            })
+            this.getPage();
         }
     }
 </script>

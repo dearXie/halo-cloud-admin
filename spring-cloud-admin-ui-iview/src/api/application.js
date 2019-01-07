@@ -7,6 +7,13 @@ export const getApplications = ()=> {
     });
 };
 
+export const getApplicationPage = (currentPage,pageSize)=> {
+    return httpRequest.request({
+        method: 'get',
+        url: `/application/${pageSize}/${currentPage}`
+    });
+};
+
 /**
  * 获取某个应用的信息
  * @param name
