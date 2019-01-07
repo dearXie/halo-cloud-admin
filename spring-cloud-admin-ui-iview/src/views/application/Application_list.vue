@@ -32,17 +32,29 @@
                 </header>
                 <div class="application_body">
                     <div class="body_info">
-                        <div class="application_status">
+                        <div class="info_item">
                             <span>status</span>
                             <span :class="{'up': (app.status === 'UP')}">{{app.status}}</span>
                         </div>
-                        <div class="application_group">
+                        <div class="info_item">
                             <span>owner</span>
                             <span>某某事业部</span>
                         </div>
-                        <div class="application_version">
+                        <div class="info_item">
                             <span>project</span>
                             <span>渠道平台</span>
+                        </div>
+                        <div class="info_item">
+                            <span>UP</span>
+                            <span>{{getInstancesStatusCount(app.instances,'UP')}}</span>
+                        </div>
+                        <div class="info_item">
+                            <span>OFFLINE</span>
+                            <span>{{getInstancesStatusCount(app.instances,'OFFLINE')}}</span>
+                        </div>
+                        <div class="info_item">
+                            <span>DOWN</span>
+                            <span>{{getInstancesStatusCount(app.instances,'DOWN')}}</span>
                         </div>
                     </div>
                 </div>
@@ -95,10 +107,18 @@
             pageChange(val){
                 this.req.curretPage=val;
                 this.getPage();
+            },
+            getInstancesStatusCount(list,status){
+                return list.filter(item => {
+                    return item.statusInfo.status === status
+                }).length;
             }
         },
-        mounted(){
+        created(){
             this.getPage();
+        },
+        mounted(){
+
         }
     }
 </script>

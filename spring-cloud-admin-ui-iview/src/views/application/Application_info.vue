@@ -23,14 +23,22 @@
                 application:{}
             }
         },
-        mounted(){
-            getApplicationInfo(this.$route.params.name).then(res =>{
-                if(res.status === 200){
-                    this.application = res.data;
-                }
-            },error =>{
+        methods:{
+            getApplicationInfo(){
+                getApplicationInfo(this.$route.params.name).then(res =>{
+                    if(res.status === 200){
+                        this.application = res.data;
+                    }
+                },error =>{
 
-            })
+                })
+            }
+        },
+        mounted(){
+            this.getApplicationInfo();
+        },
+        watch:{
+            "$route": "getApplicationInfo"
         }
     }
 </script>
